@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">V2</string>
+    <string name="ec_img">ec_img</string>
+    <string name="confirmTitle">CONFIRM</string>
+    <string name="editTitle">EDIT</string>
+    <string name="newContact"> Name: %1$s - Number: %2$s</string>
 </resources>
