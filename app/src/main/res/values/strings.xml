@@ -4,4 +4,9 @@
     <string name="confirmTitle">CONFIRM</string>
     <string name="editTitle">EDIT</string>
     <string name="newContact"> Name: %1$s - Number: %2$s</string>
+
+    <string name="contactPersonName"> Name </string>
+    <string name="contactPersonNumber"> Number </string>
+    <string name="numberHint"> Type contact number here </string>
+    <string name="submitButton"> Submit </string>
 </resources>

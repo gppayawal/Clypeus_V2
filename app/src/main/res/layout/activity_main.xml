@@ -21,12 +21,12 @@
         android:id="@+id/confirm_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBaseline="@+id/edit_btn"
+        android:layout_alignBottom="@+id/edit_btn"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="61dp"
-        android:layout_marginStart="61dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginStart="66dp"
         android:width="100dp"
         android:height="60dp"
         android:onClick="confirmContacts"
@@ -37,33 +37,33 @@
         android:id="@+id/edit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/editTitle"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp"
+        android:layout_toEndOf="@+id/confirm_btn"
+        android:layout_toRightOf="@+id/confirm_btn"
         android:width="100dp"
         android:height="60dp"
-        android:textSize="15sp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp"
-        android:layout_alignBaseline="@+id/confirm_btn"
-        android:layout_alignBottom="@+id/confirm_btn"
-        android:layout_toRightOf="@+id/confirm_btn"
-        android:layout_toEndOf="@+id/confirm_btn"
-        android:onClick="editContactsList"/>
+        android:onClick="editContactsList"
+        android:text="@string/editTitle"
+        android:textSize="15sp" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/confirm_btn"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView"
-        android:background="@color/colorPrimary"
-        android:layout_above="@+id/confirm_btn">
+        android:background="@color/colorPrimary">
 
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/contacts_tbl">
 
-            <TableRow
+            <!--<TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent" >
 
@@ -201,10 +201,17 @@
                     android:layout_height="wrap_content"
                     android:text="sample text 2"
                     android:textSize="50sp"/>
-            </TableRow>
+            </TableRow>-->
 
         </TableLayout>
     </ScrollView>
 
+    <!--ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>-->
 
 </RelativeLayout>
+
