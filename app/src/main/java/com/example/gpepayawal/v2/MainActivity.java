@@ -274,6 +274,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -283,6 +284,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView mobileContactsListView;
     private Handler updateBarHandler;
 
+    TableLayout contactsTable;
     ArrayList<String> mobileContactsList;
     Cursor cursor;
     int counter;
@@ -290,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "pinguMessage";
     Button samp = null;
     TableLayout contacts_tbl = null;
-    Map<String, String> directory = new HashMap<>();
+    Map<String, ContactPerson> directory = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -313,14 +315,6 @@ public class MainActivity extends AppCompatActivity {
     protected void readContacts(){
         setContentView(R.layout.read_contacts_layout);
 
-        /*ListView listView = (ListView) findViewById(R.id.list);
-        ArrayList<String> list = new ArrayList<>();
-
-        list.add("nani??");
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_layout, R.id.text1, list);
-        listView.setAdapter(adapter);*/
-
         pDialog = new ProgressDialog(MainActivity.this);
         pDialog.setMessage("Reading contacts...");
         pDialog.setCancelable(false);
@@ -337,26 +331,28 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
 
-        // Set onclicklistener to the list item.
-        int count = 6;
-        for(int i = 0; i < 6; i++){
-            mobileContactsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    //TODO Do whatever you want with the list data
-                    Toast.makeText(getApplicationContext(), "item clicked : \n" + mobileContactsList.get(position), Toast.LENGTH_SHORT).show();
+        // Set onclicklistener to the list item. ETO YUNG ORIGINAL CODE
+        mobileContactsListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                //TODO Do whatever you want with the list data
+                Toast.makeText(getApplicationContext(), "item clicked : \n" + mobileContactsList.get(position), Toast.LENGTH_SHORT).show();
 
+                for(int i = 0; i < 6; i++){
+                    Toast.makeText(getApplicationContext(), "count" + i, Toast.LENGTH_LONG).show();
                     String clicked = mobileContactsList.get(position);
                     Toast.makeText(getApplicationContext(), clicked, Toast.LENGTH_LONG).show();
 
-                    String[] parts = clicked.split(" ");
+                    String[] parts = clicked.split(">>");
                     String name = parts[0];
                     String num = parts[1];
 
-                    addContactPerson(name, num);
+                    directory.put(name, new ContactPerson(name, num));
+                    addContactPerson();
                 }
-            });
-        }
+            }
+        });
+
     }
 
     private boolean mayRequestContacts(){
@@ -427,14 +423,14 @@ public class MainActivity extends AppCompatActivity {
                 int hasPhoneNumber = Integer.parseInt(cursor.getString(cursor.getColumnIndex(HAS_PHONE_NUMBER)));
 
                 if(hasPhoneNumber > 0){
-                    output.append(name + " ");
+                    output.append(name);
 
                     //This is to read multiple phone numbers associated with the same contact
                     Cursor phoneCursor = contentResolver.query(PhoneCONTENT_URI, null, Phone_CONTACT_ID + " = ?", new String[]{contact_id}, null);
 
                     while(phoneCursor.moveToNext()){
                         phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndex(NUMBER));
-                        output.append(phoneNumber);
+                        output.append(">>" + phoneNumber);
                     }
 
                     phoneCursor.close();
@@ -498,22 +494,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    protected void addContactPerson(String name, String number) { //Add selected contact person in our Emergency List
-        /*setContentView(R.layout.contact_person_form);
-
-        final EditText nameField = (EditText) findViewById(R.id.EditTextName);
-        String name = nameField.getText().toString();
-
-        final EditText numberField = (EditText) findViewById(R.id.EditTextNumber);
-        String number = numberField.getText().toString(); */
-
+    protected void addContactPerson() { //Add selected contact person in our Emergency List
         setContentView(R.layout.activity_main);
-        Toast.makeText(this, name + " --- " + number, Toast.LENGTH_LONG).show();
+
+        contactsTable = (TableLayout) findViewById(R.id.contacts_tbl);
+        int size = directory.size();
+
+        Set<Map.Entry<String, ContactPerson>> set = directory.entrySet();
+        for(Map.Entry<String, ContactPerson> entry : set){
+            String key = entry.getKey();
+            ContactPerson p = entry.getValue();
+
+            TextView person = new TextView(MainActivity.this);
+            person.setText(key + " "  + p.number);
+
+            contactsTable.addView(person);
+            mobileContactsList.remove(person);
+        }
 
 
     }
 
-    /*@Override
+    @Override
     protected void onStart() {
         super.onStart();
         Log.i(TAG, "onStart");
@@ -559,7 +561,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         Log.i(TAG, "onSaveState");
-    }*/
+    }
 
     @Override
     public boolean onKeyLongPress(int keyCode, KeyEvent event) {
@@ -587,25 +589,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void confirmContacts(View v) {
         Toast.makeText(this, "Contacts Confirmed!", Toast.LENGTH_SHORT).show();
+        this.onPause();
     }
 
     public void editContactsList(View v) {
-
-       /* ContactPerson person = new ContactPerson("pau", "09153325018");
-
-
-        TextView samp = new TextView(MainActivity.this);
-        contacts_tbl = (TableLayout) findViewById(R.id.contacts_tbl);
-
-        Resources res = getResources();
-        String newContact = res.getString(R.string.newContact, person.name, person.number);
-
-        Toast.makeText(this, person.name, Toast.LENGTH_SHORT).show();
-
-
-        samp.setText(newContact);
-        contacts_tbl.addView(samp);*/
-        readContacts();
+      readContacts();
     }
 }
-

@@ -9,11 +9,14 @@ import android.util.Log;
 
 public class ContactPerson {
     private static final String TAG = "pinguMessage";
-    protected String name, number;
+    String name, number;
+    int count = 0;
 
     public ContactPerson(String name, String number){
         this.name = name;
         this.number = number;
+
+        count++;
     }
 
     public void test(){
