@@ -1,12 +1,29 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    //Android v7 Support Library Version
+    ext.library_support_version = '27.0.2'
+
+    //Google Play Services Libraries Version
+    ext.library_play_service_version = '11.8.0'
+
+    //Compile SDK Version
+    ext.library_compile_sdk_version = 26
+
+    //Build Tool Version
+    ext.library_build_tools_version = '26.0.3'
+
     repositories {
         jcenter()
+        mavenCentral()
+        google()
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
 
+    dependencies {
+        //classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        /*classpath 'com.google.gms:google-services:3.1.0'*/
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -15,6 +32,8 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
+        google()
     }
 }
 

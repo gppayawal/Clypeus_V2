@@ -1,12 +1,65 @@
 <resources>
-    <string name="app_name">V2</string>
+    <string name="app_name">Clypeus</string>
     <string name="ec_img">ec_img</string>
-    <string name="confirmTitle">CONFIRM</string>
-    <string name="editTitle">EDIT</string>
+    <string name="confirmTitle">Confirm Contacts</string>
+    <string name="editTitle">Edit Contacts</string>
     <string name="newContact"> Name: %1$s - Number: %2$s</string>
+    <string name="incomingcall"> Incoming Call</string>
+    <string name="fakecallname"> Unknown Number </string>
+    <string name="fakecallnumber"> +639153325018 </string>
+    <string name="title_activity_fake_ringing">chu </string>
 
     <string name="contactPersonName"> Name </string>
     <string name="contactPersonNumber"> Number </string>
     <string name="numberHint"> Type contact number here </string>
     <string name="submitButton"> Submit </string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_edit_contacts">EditContactsActivity</string>
+    <string name="add">ADD</string>
+    <string name="confirmEdit">CONFIRM</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Take Note!</string>
+    <string name="slide_11_desc">Make sure your SIM has load balance</string>
+    <string name="slide_12_desc">The Location services is turned on</string>
+    <string name="slide_13_desc">
+        Also, IT WOULD BE BEST if you are connected online in order to convert
+        your location coordinates into readable addresses. If you are offline,
+        only coordinates of your location (latitude,longitude) will be provided.
+    </string>
+
+    <string name="slide_2_title">Remember!</string>
+    <string name="slide_21_desc">Loud SOS</string>
+    <string name="slide_22_desc">
+        Long press on VOLUME UP until your phones vibrates!
+        An attention-grabbing sound will play in order to catch attention of other people near you.
+        Use it wisely!
+    </string>
+    <string name="slide_23_desc">Silent SOS</string>
+    <string name="slide_24_desc">
+        Long press on VOLUME DOWN until your phones vibrates!
+        Use it if you need to call for help silently!
+    </string>
+    <string name="slide_25_desc">Cancel SOS</string>
+    <string name="slide_26_desc">
+        In case of false alarms, tap the Emergency Contacts banner/image in the app for 10 TIMES!
+    </string>
+    <string name="slide_27_desc">Fake Call</string>
+    <string name="slide_28_desc">
+        When in an uncomfortable situation, shake your phone TWICE.
+    </string>
+
+    <string name="slide_3_title">Great Discounts</string>
+    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
 </resources>

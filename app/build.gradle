@@ -1,16 +1,22 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 23
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.example.gpepayawal.v2"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    dexOptions{
+        javaMaxHeapSize "4g"
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -19,8 +25,15 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -28,6 +41,12 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:26.+'
+    compile 'com.google.android.gms:play-services-gcm:11.6.0'
+    compile 'com.google.android.gms:play-services-location:11.6.0'
+    compile 'com.google.android.gms:play-services-maps:11.6.0'
+    compile 'com.google.android.gms:play-services-places:11.6.0'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.synnapps:carouselview:0.1.4'
 }
 
 configurations.all {
@@ -40,4 +59,3 @@ configurations.all {
         }
     }
 }
-

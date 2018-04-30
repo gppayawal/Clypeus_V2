@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#252525">
+    android:textColor="@android:color/white"
+    android:background="#1d002a">
 
     <ListView
         android:id="@+id/list"
@@ -12,8 +13,8 @@
         android:layout_marginLeft="7dp"
         android:layout_marginRight="7dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorPrimaryDark"
-        android:paddingTop="5dp">
-
+        android:background="#1d002a"
+        android:paddingTop="5dp"
+        android:textSize="10dp">
     </ListView>
 </RelativeLayout>

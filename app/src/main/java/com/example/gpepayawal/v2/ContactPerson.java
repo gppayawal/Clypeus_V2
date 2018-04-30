@@ -7,7 +7,7 @@ import android.util.Log;
  * Created by gpepayawal on 9/30/17.
  */
 
-public class ContactPerson {
+public class ContactPerson extends Exception {
     private static final String TAG = "pinguMessage";
     String name, number;
     int count = 0;
@@ -19,8 +19,8 @@ public class ContactPerson {
         count++;
     }
 
-    public void test(){
-        Log.d(TAG, this.name);
+    public String getContactPerson(ContactPerson p){
+        return p.name + p.number;
     }
 
 }

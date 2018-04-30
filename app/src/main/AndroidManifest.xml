@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.gpepayawal.v2">
+    package="com.example.gpepayawal.v2"
+    android:versionCode="1"
+    android:versionName="1.0.0">
 
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="23"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+        android:targetSdkVersion="23" />
+
+
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -14,13 +34,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />    //LAUNCHER - app's starting point
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Login" />
+
+        <activity
+            android:name=".EditContactsActivity"
+            android:label="@string/title_activity_edit_contacts"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity android:name=".FakeCallRinging">
+        </activity>
+
+        <activity android:name=".Tutorials" android:parentActivityName=".MainActivity">
+        </activity>
+
+        <activity android:name=".Tutorials2" android:parentActivityName=".Tutorials">
+        </activity>
+
+        <activity android:name=".Tutorials3" android:parentActivityName=".Tutorials2">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <service android:name=".MyService"/>
     </application>
 
+    <receiver android:name="com.android.music.MediaButtonIntentReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.MEDIA_BUTTON" />
+            <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+        </intent-filter>
+    </receiver>
 </manifest>
