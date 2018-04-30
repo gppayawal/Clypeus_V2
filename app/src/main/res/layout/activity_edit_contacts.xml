@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textColor="@android:color/white"
+    tools:context="com.example.gpepayawal.v2.EditContactsActivity">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="46dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginStart="81dp"
+        android:text="@string/add" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_marginLeft="52dp"
+        android:layout_marginStart="52dp"
+        android:layout_toEndOf="@+id/button4"
+        android:layout_toRightOf="@+id/button4"
+        android:onClick="confirmEdit"
+        android:text="CONFIRM" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:id="@+id/editcontacts_tbl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1d002a">
+
+        </TableLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

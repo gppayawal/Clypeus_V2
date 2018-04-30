@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:background="#1d002a">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        app:srcCompat="@drawable/wow"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_21_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="127dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView11"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_22_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_24_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView16"
+        android:layout_alignLeft="@+id/textView24"
+        android:layout_alignStart="@+id/textView24"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_25_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="340dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView17"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_26_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="362dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView18"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_27_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="437dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_gotit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="23dp"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_28_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="459dp" />-->
+
+    <Button
+        android:id="@+id/btn_gotit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:text="@string/start"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="503dp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@null"
+        android:text="BACK"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="503dp" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView14"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_23_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="241dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textColor="@android:color/white"
+    android:theme="@style/Base.AlertDialog.AppCompat.Light"
+    tools:context="com.example.gpepayawal.v2.Login">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/landing1"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/pin"
+            android:layout_alignLeft="@+id/pin"
+            android:layout_alignStart="@+id/pin"
+            android:layout_marginBottom="44dp"
+            android:ems="15"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textCursorDrawable="@null" />
+
+        <EditText
+            android:id="@+id/pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/loginBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="85dp"
+            android:ems="15"
+            android:hint="PIN"
+            android:inputType="number"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textCursorDrawable="@null" />
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="36dp"
+            android:text="go" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

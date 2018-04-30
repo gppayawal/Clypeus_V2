@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#1d002a">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/important" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:text="@string/slide_1_title"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_title"
+        android:textStyle="bold"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_11_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView11"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_12_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView12"
+        android:layout_marginTop="35dp"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_13_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:text="@string/next"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="503dp" />
+</RelativeLayout>

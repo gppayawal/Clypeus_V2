@@ -5,8 +5,8 @@
     android:versionName="1.0.0">
 
     <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="23" />
+        android:minSdkVersion="23"
+        android:targetSdkVersion="26"/>
 
 
     <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
